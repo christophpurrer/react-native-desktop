@@ -7,7 +7,7 @@ export default class Main extends Component {
   render() {
     return (
       <View style={styles.screen}>
-        <Text>Hello, Messenger Desktop1!</Text>
+        <Text>Hello, Messenger Desktop!!!</Text>
       </View>
     );
   }

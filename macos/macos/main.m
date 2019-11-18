@@ -1,12 +1,11 @@
 //
 //  main.m
-//  RNmacos
+//  macos
 //
 //  Created by Christoph Purrer on 10/30/19.
 //  Copyright © 2019 Christoph Purrer. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <Cocoa/Cocoa.h>
 #import <React/RCTRootView.h>
 #import <React/RCTBridge.h>
@@ -36,7 +35,7 @@ int main() {
     @autoreleasepool {
         [NSApplication sharedApplication];
         
-        NSRect bounds = NSMakeRect(0, 0, 720, 1280);
+        NSRect bounds = NSMakeRect(0, 0, 360, 640);
         NSWindow* window =
         [[NSWindow alloc] initWithContentRect:bounds
                                     styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskResizable
