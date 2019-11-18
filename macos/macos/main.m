@@ -12,7 +12,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 
-NSString *kBundleNameJS = @"RNmacos";
+NSString *kBundleNameJS = @"Main";
 
 @interface BridgeDelegate : NSObject <RCTBridgeDelegate> @end
 
