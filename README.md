@@ -19,4 +19,12 @@ node_modules/react-native/scripts/ios-install-third-party.sh
 # start Metro
 yarn start
 ```
-Now open the Project in X.
+Now open the Project in XCode ....
+
+Trying you build with a cyclic dependency error:
+![cyclic dependency error](doc/buildErrorCyclicDependency.png)
+Delete the 'Start Packager' section from 'Build  phases' in the 'macos' target
+![Delete Start Packager](doc/deleteStartPackager.png)
+Optional check dependencies ...
+![Link dependencies](doc/linkDependencies.png)
+![Frameworks](doc/addDependencies.png)

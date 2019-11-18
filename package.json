@@ -9,8 +9,8 @@
   "dependencies": {
     "abort-controller": "^3.0.0",
     "art": "^0.10.0",
-    "metro": "0.54.1",
-    "metro-config": "0.54.1",
+    "metro": "0.57",
+    "metro-config": "0.57",
     "react-native": "github:microsoft/react-native#master",
     "regenerator-runtime": "^0.13.2",
     "scheduler": "0.14.0",
