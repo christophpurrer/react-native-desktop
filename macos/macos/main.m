@@ -11,7 +11,7 @@
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 
-NSString *kBundleNameJS = @"Main";
+NSString *kBundleNameJS = @"App";
 
 @interface BridgeDelegate : NSObject <RCTBridgeDelegate> @end
 

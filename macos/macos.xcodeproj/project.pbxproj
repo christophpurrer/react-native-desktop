@@ -14,6 +14,7 @@
 		6EC63DC62379487E002372FA /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC63D9523794852002372FA /* libRCTNetwork.a */; };
 		6EC63DC72379487E002372FA /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC63DB623794863002372FA /* libRCTText.a */; };
 		6EC63DC82379487E002372FA /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EC63DA42379485C002372FA /* libRCTWebSocket.a */; };
+		6EFDF53A2386C06600583650 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EFDF5172386C05400583650 /* libRCTAnimation.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -325,6 +326,34 @@
 			remoteGlobalIDString = 6B857DA21EC51FC600A9D063;
 			remoteInfo = "React-macOS";
 		};
+		6EFDF5122386C05400583650 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EFDF50C2386C05400583650 /* RCTAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTAnimation;
+		};
+		6EFDF5142386C05400583650 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EFDF50C2386C05400583650 /* RCTAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2D2A28201D9B03D100D4039D;
+			remoteInfo = "RCTAnimation-tvOS";
+		};
+		6EFDF5162386C05400583650 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EFDF50C2386C05400583650 /* RCTAnimation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 647647C51F0BC7F200C2D89B;
+			remoteInfo = "RCTAnimation-macOS";
+		};
+		6EFDF53B2386C07100583650 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6EFDF50C2386C05400583650 /* RCTAnimation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 647647861F0BC7F200C2D89B;
+			remoteInfo = "RCTAnimation-macOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -348,6 +377,7 @@
 		6EC63D982379485C002372FA /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		6EC63DAD23794863002372FA /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		6EC63DB92379486A002372FA /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
+		6EFDF50C2386C05400583650 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -356,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EC63DC72379487E002372FA /* libRCTText.a in Frameworks */,
+				6EFDF53A2386C06600583650 /* libRCTAnimation.a in Frameworks */,
 				6EC63DC62379487E002372FA /* libRCTNetwork.a in Frameworks */,
 				6EC63DC52379487E002372FA /* libRCTImage.a in Frameworks */,
 				6EC63D8B23794832002372FA /* JavaScriptCore.framework in Frameworks */,
@@ -370,6 +401,7 @@
 		6E474B99237945B900183D81 = {
 			isa = PBXGroup;
 			children = (
+				6EFDF50C2386C05400583650 /* RCTAnimation.xcodeproj */,
 				6EC63DB92379486A002372FA /* RCTImage.xcodeproj */,
 				6EC63DAD23794863002372FA /* RCTText.xcodeproj */,
 				6EC63D982379485C002372FA /* RCTWebSocket.xcodeproj */,
@@ -479,6 +511,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6EFDF50D2386C05400583650 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6EFDF5132386C05400583650 /* libRCTAnimation.a */,
+				6EFDF5152386C05400583650 /* libRCTAnimation.a */,
+				6EFDF5172386C05400583650 /* libRCTAnimation.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -493,6 +535,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6EFDF53C2386C07100583650 /* PBXTargetDependency */,
 				6EC63DCA237948CF002372FA /* PBXTargetDependency */,
 				6EC63DCC237948CF002372FA /* PBXTargetDependency */,
 				6EC63DCE237948CF002372FA /* PBXTargetDependency */,
@@ -530,6 +573,10 @@
 			productRefGroup = 6E474BA3237945B900183D81 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 6EFDF50D2386C05400583650 /* Products */;
+					ProjectRef = 6EFDF50C2386C05400583650 /* RCTAnimation.xcodeproj */;
+				},
 				{
 					ProductGroup = 6EC63DBA2379486A002372FA /* Products */;
 					ProjectRef = 6EC63DB92379486A002372FA /* RCTImage.xcodeproj */;
@@ -832,6 +879,27 @@
 			remoteRef = 6EC63DC32379486A002372FA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		6EFDF5132386C05400583650 /* libRCTAnimation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTAnimation.a;
+			remoteRef = 6EFDF5122386C05400583650 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6EFDF5152386C05400583650 /* libRCTAnimation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTAnimation.a;
+			remoteRef = 6EFDF5142386C05400583650 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6EFDF5172386C05400583650 /* libRCTAnimation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTAnimation.a;
+			remoteRef = 6EFDF5162386C05400583650 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -870,6 +938,11 @@
 			isa = PBXTargetDependency;
 			name = "React-macOS";
 			targetProxy = 6EC63DD1237948CF002372FA /* PBXContainerItemProxy */;
+		};
+		6EFDF53C2386C07100583650 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "RCTAnimation-macOS";
+			targetProxy = 6EFDF53B2386C07100583650 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
