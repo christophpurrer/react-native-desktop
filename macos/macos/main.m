@@ -35,9 +35,8 @@ int main() {
     @autoreleasepool {
         [NSApplication sharedApplication];
         
-        NSRect bounds = NSMakeRect(0, 0, 360, 640);
         NSWindow* window =
-        [[NSWindow alloc] initWithContentRect:bounds
+        [[NSWindow alloc] initWithContentRect:NSMakeRect(0, [[NSScreen mainScreen] frame].size.height - 640, 360, 640)
                                     styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskResizable
                                       backing:NSBackingStoreBuffered
                                         defer:NO];
@@ -47,11 +46,10 @@ int main() {
         RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
                                                          moduleName:kBundleNameJS
                                                   initialProperties:nil];
-        rootView.frame = bounds;
+        rootView.frame = NSMakeRect(0, 0, window.frame.size.width, window.frame.size.height);
         [window.contentView addSubview:rootView];
         [window makeKeyAndOrderFront:nil];
-        [NSApp activateIgnoringOtherApps:YES];
-        [NSApp run];
+        [[NSApplication sharedApplication] run];
     }
     return 0;
 }
