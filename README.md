@@ -22,26 +22,33 @@ yarn start
 ### Now open the Project in XCode ....
 
 Trying to build *React-macOS* ...
+
 ![React-macOS](doc/buildReactmacOS.png)
 
 you will encounter a cyclic dependency error:
+
 ![cyclic dependency error](doc/buildErrorCyclicDependency.png)
 
 Delete the 'Start Packager' section from 'Build  phases' in the 'macos' target
+
 ![Delete Start Packager](doc/deleteStartPackager.png)
 
 It should build now.
 Now build *macOS*
+
 ![macOS](doc/buildmacOS.png)
 
 ## How this project was setup
 Add dependencies to your project from:
 - node_modules/react-native/Libraries
 - node_modules/react-native/React
+
 ![Project dependencies](doc/dependencies.png)
 
 Add link dependencies to your project
+
 ![Link dependencies](doc/linkDependencies.png)
 
 Add project dependencies
+
 ![Frameworks](doc/addDependencies.png)
