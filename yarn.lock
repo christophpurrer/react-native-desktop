@@ -3777,9 +3777,9 @@ react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.12.0.tgz#2cc0fe0fba742d97fd527c42a13bec4eeb06241c"
   integrity sha512-rPCkf/mWBtKc97aLL9/txD8DZdemK0vkA3JMLShjlJB3Pj3s+lpf1KaBzMfQrAmhMQB0n1cU/SUGgKKBCe837Q==
 
-"react-native@github:microsoft/react-native#master":
-  version "0.60.0-microsoft.20"
-  resolved "https://codeload.github.com/microsoft/react-native/tar.gz/c164770cda19497cdb0f237862ceea3119ede70c"
+"react-native@github:microsoft/react-native#v0.60.0-microsoft.25":
+  version "0.60.0-microsoft.25"
+  resolved "https://codeload.github.com/microsoft/react-native/tar.gz/d9a25c2d04f32259d711e38195689d376d4a06a7"
   dependencies:
     "@babel/core" "^7.4.0"
     "@babel/generator" "^7.4.0"
