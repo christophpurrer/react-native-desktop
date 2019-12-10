@@ -7,14 +7,9 @@
     "post-install": "cp node_modules/react-native/Libraries/Utilities/warnOnce.js node_modules/react-native/Libraries/react-native"
   },
   "dependencies": {
-    "abort-controller": "^3.0.0",
-    "art": "^0.10.0",
     "metro": "0.57",
     "metro-config": "0.57",
-    "react-native": "github:microsoft/react-native#v0.60.0-microsoft.25",
-    "regenerator-runtime": "^0.13.2",
-    "scheduler": "0.14.0",
-    "stacktrace-parser": "^0.1.3"
+    "react-native": "github:microsoft/react-native#v0.60.0-microsoft.25"
   },
   "devDependencies": {
     "@react-native-community/cli": "^2.0.1",    
