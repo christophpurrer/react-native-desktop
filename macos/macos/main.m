@@ -7,19 +7,44 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import <React/RCTRootView.h>
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
+#import <React/RCTRootView.h>
 
-NSString *kBundleNameJS = @"App";
+NSString* kBundleNameJS = @"App";
 
-@interface BridgeDelegate : NSObject <RCTBridgeDelegate> @end
+@interface ReactNativeWindow : NSWindowController <NSWindowDelegate, RCTBridgeDelegate> {
+    RCTRootView* rootView_;
+    RCTBridge* bridge_;
+}
+@end
 
-@implementation BridgeDelegate
+@implementation ReactNativeWindow
 
-- (NSURL *)sourceURLForBridge:(__unused RCTBridge *)bridge
-{
-    NSString *jsBundlePath = [NSString stringWithFormat:@"%@.index", kBundleNameJS];
+- (id)init {
+    NSWindow* window = [[NSWindow alloc]
+                        initWithContentRect:NSMakeRect(0, [[NSScreen mainScreen] frame].size.height - 640, 360, 640)
+                        styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskClosable |
+                        NSWindowStyleMaskResizable
+                        backing:NSBackingStoreBuffered
+                        defer:NO];
+    if (self = [self initWithWindow:window]) {
+        [self.window makeKeyAndOrderFront:NULL];
+        
+        bridge_ = [[RCTBridge alloc] initWithDelegate:self launchOptions:nil];
+        rootView_ = [[RCTRootView alloc] initWithBridge:bridge_
+                                             moduleName:kBundleNameJS
+                                      initialProperties:nil];
+        rootView_.frame = NSMakeRect(0, 0, self.window.frame.size.width, self.window.frame.size.height);
+        rootView_.autoresizingMask = (NSViewMinXMargin | NSViewMinXMargin | NSViewMinYMargin |
+                                      NSViewMaxYMargin | NSViewWidthSizable | NSViewHeightSizable);
+        [self.window.contentView addSubview:rootView_];
+    }
+    return self;
+}
+
+- (NSURL*)sourceURLForBridge:(__unused RCTBridge*)bridge {
+    NSString* jsBundlePath = [NSString stringWithFormat:@"%@.index", kBundleNameJS];
     //    return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:jsBundlePath
     //                                                          fallbackResource:nil];
     return [RCTBundleURLProvider jsBundleURLForBundleRoot:jsBundlePath
@@ -27,28 +52,12 @@ NSString *kBundleNameJS = @"App";
                                                 enableDev:YES
                                        enableMinification:NO];
 }
-
 @end
-
 
 int main() {
     @autoreleasepool {
         [NSApplication sharedApplication];
-        
-        NSWindow* window =
-        [[NSWindow alloc] initWithContentRect:NSMakeRect(0, [[NSScreen mainScreen] frame].size.height - 640, 360, 640)
-                                    styleMask:NSWindowStyleMaskTitled | NSWindowStyleMaskResizable
-                                      backing:NSBackingStoreBuffered
-                                        defer:NO];
-        
-        RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate: [BridgeDelegate new]
-                                                  launchOptions:nil];
-        RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                         moduleName:kBundleNameJS
-                                                  initialProperties:nil];
-        rootView.frame = NSMakeRect(0, 0, window.frame.size.width, window.frame.size.height);
-        [window.contentView addSubview:rootView];
-        [window makeKeyAndOrderFront:nil];
+        [ReactNativeWindow new];
         [[NSApplication sharedApplication] run];
     }
     return 0;
